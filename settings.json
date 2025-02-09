@@ -166,18 +166,5 @@
     "streambuf": "cpp",
     "cinttypes": "cpp",
     "typeinfo": "cpp"
-  },
-
-  // ==============================
-  // Configurazioni per Java
-  // ==============================
-  "java.configuration.updateBuildConfiguration": "interactive",
-  "java.compile.nullAnalysis.mode": "automatic",
-
-  // ==============================
-  // C/C++ IntelliSense
-  // ==============================
-  "C_Cpp.errorSquiggles": "disabled", // Disabilita gli errori sottolineati in rosso
-  "C_Cpp.default.compilerPath": "/usr/bin/g++", // Imposta il compilatore C++
-  "C_Cpp.default.intelliSenseMode": "gcc-x64" // Modalità IntelliSense GCC
+  }
 }
