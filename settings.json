@@ -12,7 +12,7 @@
   // ==============================
   "editor.fontSize": 16, // Dimensione carattere editor
   "editor.fontFamily": "JetBrains Mono, MesloLGS NF", // Font usato nell'editor
-  "terminal.integrated.fontFamily": "monospace", // Font per il terminale
+  "terminal.integrated.fontFamily": "JetBrains Mono, MesloLGS NF", // Font per il terminale
 
   // ==============================
   // Sicurezza e File Sconosciuti
