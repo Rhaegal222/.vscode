@@ -2,8 +2,8 @@
   // ==============================
   // Aspetto e Tema
   // ==============================
-  "workbench.colorTheme": "One Dark Pro Darker", // Tema scuro personalizzato
-  "window.zoomLevel": 1, // Zoom UI
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "window.zoomLevel": 1,
   "workbench.editor.splitInGroupLayout": "vertical", // Disposizione verticale delle schede
   "workbench.editor.enablePreview": false, // Disabilita anteprima file (apre sempre nuovi editor)
 
@@ -24,6 +24,7 @@
   // ==============================
   "git.autofetch": true, // Auto-fetch Git attivo
   "git.confirmSync": false, // Nessuna conferma richiesta per il sync Git
+  "git.postCommitCommand": "sync", // Sincronizza automaticamente dopo il commit
   "git.enableSmartCommit": true, // Commit automatico senza stage se possibile
   "githubPullRequests.createOnPublishBranch": "never", // Nessuna PR creata automaticamente
   "diffEditor.ignoreTrimWhitespace": false, // Mantiene spazi bianchi nei diff
@@ -32,7 +33,7 @@
   // Copilot AI
   // ==============================
   "github.copilot.enable": {
-    "*": true, // Abilita Copilot ovunque
+    "*": true,
     "plaintext": false,
     "markdown": true,
     "scminput": false
@@ -82,14 +83,20 @@
   ],
 
   // ==============================
+  // Configurazione di PHP e Intelephense
+  // ==============================
+  "intelephense.environment.phpVersion": "8.1", // o la tua versione di PHP
+  "intelephense.diagnostics.enable": true,
+  "intelephense.files.maxSize": 5000000,
+  "intelephense.files.exclude": ["**/vendor/**", "**/.git/**"],
+  // Imposta il percorso di PHP in base al sistema operativo
+  "php.validate.executablePath": "/usr/bin/php", // Linux/Mac
+  "php.validate.executablePath:windows": "C:\\PHP\\8.13.14", // Windows
+
+  // ==============================
   // Configurazione per Notebook
   // ==============================
   "notebook.defaultFormatter": "esbenp.prettier-vscode", // Formattazione notebook
-
-  // ==============================
-  // PHP Configurazione
-  // ==============================
-  "php.validate.executablePath": "/usr/bin/php", // Path PHP per validazione codice
 
   // ==============================
   // Markdown Preview Enhanced
@@ -106,7 +113,7 @@
   // ==============================
   // Sincronizzazione VS Code (Esclusioni)
   // ==============================
-  "settingsSync.ignoredSettings": ["-php.validate.executablePath"], // Esclude questa impostazione
+  "settingsSync.ignoredSettings": ["php.validate.executablePath"], // Esclude questa impostazione
 
   // ==============================
   // Associazioni File per C++
@@ -166,5 +173,15 @@
     "streambuf": "cpp",
     "cinttypes": "cpp",
     "typeinfo": "cpp"
-  }
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "remote.SSH.remotePlatform": {
+    "wyrmrest.it": "linux"
+  },
+  "githubPullRequests.pullBranch": "never",
+  "github.copilot.nextEditSuggestions.enabled": true
 }
