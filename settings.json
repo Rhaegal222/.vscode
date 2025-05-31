@@ -83,17 +83,6 @@
   ],
 
   // ==============================
-  // Configurazione di PHP e Intelephense
-  // ==============================
-  "intelephense.environment.phpVersion": "8.1", // o la tua versione di PHP
-  "intelephense.diagnostics.enable": true,
-  "intelephense.files.maxSize": 5000000,
-  "intelephense.files.exclude": ["**/vendor/**", "**/.git/**"],
-  // Imposta il percorso di PHP in base al sistema operativo
-  "php.validate.executablePath": "/usr/bin/php", // Linux/Mac
-  "php.validate.executablePath:windows": "C:\\PHP\\8.13.14", // Windows
-
-  // ==============================
   // Configurazione per Notebook
   // ==============================
   "notebook.defaultFormatter": "esbenp.prettier-vscode", // Formattazione notebook
@@ -114,6 +103,70 @@
   // Sincronizzazione VS Code (Esclusioni)
   // ==============================
   "settingsSync.ignoredSettings": ["php.validate.executablePath"], // Esclude questa impostazione
+
+  // ==============================
+  // Configurazione di PHP e Intelephense
+  // ==============================
+  "intelephense.environment.phpVersion": "8.4.2",
+  "intelephense.diagnostics.enable": true,
+  "intelephense.files.maxSize": 5000000,
+
+  // Rimuovi "**/vendor/**" da files.exclude
+  "intelephense.files.exclude": ["**/.git/**", "**/node_modules/**", "**/storage/**", "**/bootstrap/cache/**"],
+
+  // Indica a Intelephense dove cercare i sorgenti
+  "intelephense.environment.includePaths": [
+    "vendor",
+    "vendor/laravel/framework/src",
+    "_ide_helper.php" // se usi barryvdh/laravel-ide-helper
+  ],
+
+  // PHP-stubs essenziali (direttive, funzioni, classi core)
+  "intelephense.stubs": [
+    "apache",
+    "bcmath",
+    "bz2",
+    "core",
+    "ctype",
+    "curl",
+    "date",
+    "dom",
+    "fileinfo",
+    "filter",
+    "fpm",
+    "ftp",
+    "gd",
+    "gettext",
+    "hash",
+    "iconv",
+    "json",
+    "libxml",
+    "mbstring",
+    "mysql",
+    "openssl",
+    "pcntl",
+    "pcre",
+    "PDO",
+    "Phar",
+    "posix",
+    "Reflection",
+    "session",
+    "shmop",
+    "SimpleXML",
+    "sockets",
+    "SPL",
+    "standard",
+    "tokenizer",
+    "xml",
+    "xmlreader",
+    "xmlwriter",
+    "zip",
+    "zlib"
+  ],
+
+  // Opzionale: disabilita falsi positivi su metodi costanti non definiti
+  "intelephense.diagnostics.undefinedConstants": false,
+  "intelephense.diagnostics.undefinedMethods": false,
 
   // ==============================
   // Associazioni File per C++
